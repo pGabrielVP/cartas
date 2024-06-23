@@ -1,3 +1,20 @@
+:root{
+  --img_size: 110px;
+  --img_selected_height: 10px;
+}
+
 .carta {
-  min-height: 100px;
+  min-height: var(--img_size);
+  padding-left: 20px;
+}
+
+.selecionada {
+  padding-bottom: var(--img_selected_height);
+}
+
+.mao {
+  height: calc(var(--img_size) + var(--img_selected_height));
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
 }
