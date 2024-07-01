@@ -1,0 +1,7 @@
+@import url("./assets/css/jogar_cartas.css");
+@import url("./assets/css/index.css");
+
+:root{
+  --img_size: 110px;
+  --img_selected_height: 10px;
+}
