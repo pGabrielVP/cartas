@@ -1,4 +1,4 @@
-import Baralho from "./Baralho.mjs";
+import { Baralho } from "./Baralho.mjs";
 
 const baralho_jogo = new Baralho();
 

@@ -1,8 +1,12 @@
-export default class Baralho{
+// import { Cartas } from "./Cartas.mjs";
+
+export class Baralho{
     static cards_path = "./assets/cartas/card_";
     static id_carta = 0;
 
     constructor() {
+        // this.cartas = Cartas.cartas_vinte_um();
+
         this.cartas_usadas = {
             hearts: [],
             diamonds: [],
@@ -26,6 +30,14 @@ export default class Baralho{
         ];
         this.naipes = ["hearts", "diamonds", "clubs", "spades"];
     }
+    
+    // static nomeTemporario(obj) {
+    //     // recupera a lista de cartas do objeto
+    //     let keys = Object.keys(obj);
+    //     // retorna um valor aleatorio da lista
+    //     return keys[Math.floor(Math.random() * keys.length)]
+    // }
+
     static *id_Generator(){
         while(true){ yield Baralho.id_carta += 1; }
     };
@@ -33,7 +45,7 @@ export default class Baralho{
     static naipeDisponivel(obj){
         while(true){
             // escolhe um naipe aleatorio.
-            let naipe_atual = obj.naipes[ Math.floor(Math.random() * obj.naipes.length) ];
+            let naipe_atual = obj.naipes[Math.floor(Math.random() * obj.naipes.length)];
 
             // testa se o naipe ainda tem alguma carta que não foi utilizada.
             if (obj.cartas_usadas[naipe_atual].length < obj.cartas_disponiveis.length) { 
@@ -46,7 +58,7 @@ export default class Baralho{
     static valorDisponivel(obj, naipeNovo){
         while (true) {
             // escolhe uma carta aleatorio.
-            let valor_atual = obj.cartas_disponiveis[ Math.floor(Math.random() * obj.cartas_disponiveis.length) ]
+            let valor_atual = obj.cartas_disponiveis[Math.floor(Math.random() * obj.cartas_disponiveis.length)]
 
             // procura a carta na lista de cartas já utilizadas.
             if (obj.cartas_usadas[naipeNovo].find((procura) => procura === valor_atual) === undefined) { 
@@ -67,6 +79,9 @@ export default class Baralho{
 
         let classes = [valor, naipe, "carta"]
 
+        // teste
+        console.log(Baralho.nomeTemporario(this.cartas));
+
         return { id, valor, naipe, imagem, classes }
     }
 
@@ -77,4 +92,4 @@ export default class Baralho{
     get carta_ID(){
         return "carta_" + Baralho.id_Generator().next().value
     }
-}
+};

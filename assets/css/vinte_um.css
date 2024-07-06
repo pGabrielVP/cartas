@@ -1,0 +1,47 @@
+#vu-player_ui {
+    position: absolute;
+    top: calc(75vh - 60px);
+    left: calc(50vw - calc(1em +  230px));
+
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 10px;
+    column-gap: 2em;
+    
+    min-height: 120px;
+}
+
+#vu-player_ui > * {
+    flex: 1;
+}
+
+#vu-dealer_hand, #vu-player_hand{
+    background-color: #ececec;
+}
+
+#vu-dealer_hand{
+    position: absolute;
+    top: calc(20vh - 60px);
+    left: calc(50vw - 150px);
+
+    min-height: 120px;
+    min-width: 300px;
+}
+
+#vu-player_hand {
+    min-width: 300px;
+}
+
+#vu-player_stop, #vu-player_draw {
+    align-self: center;
+    height: 80px;
+    width: 80px;
+}
+
+#vu-player_stop {
+    background-color: #C73434;
+}
+
+#vu-player_draw {
+    background-color: #34C759;
+}

@@ -1,32 +1,35 @@
-#cartas {
+#mm-wrapper {
+    --width_btJogar: 123px;
+    --height_btJogar: 32px;
+
+    --width_h1Titulo: 96px;
+    --height_h1Titulo: 29.05px;
+}
+
+#mm-cartas {
     position: absolute;
-    left: 912px;
-    top: 222px;
-    width: 96px;
-    height: 29.05px;
     color: #757575;
+
+    left: calc(50vw - calc(var(--width_h1Titulo) / 2));
+    top: calc(20vh - calc(var(--height_h1Titulo) / 2));
+    width: var(--width_h1Titulo);
+    height: var(--height_h1Titulo);
+
     font-family: Inter;
     font-size: 24px;
     font-weight: 700;
     text-align: center;
 }
 
-#botaoJogar {
+#mm-botaoJogar {
     position: absolute;
-    left: 899px;
-    top: 540px;
-    width: 123px;
-    height: 32px;
-}
+    
+    left: calc(50vw - calc(var(--width_btJogar) / 2));
+    top: calc(50vh - calc(var(--height_btJogar) / 2));
+    width: var(--width_btJogar);
+    height: var(--height_btJogar);
 
-#botaoLabel {
-    position: absolute;
-    left: 43.5px;
-    top: 6px;
-    width: 36px;
-    height: 20px;
     font-family: "Segoe UI";
     font-size: 15px;
     font-weight: 400;
-    text-align: center;
 }
